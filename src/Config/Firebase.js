@@ -11,13 +11,13 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDAW6icZ3V1WSwUrbPliU35VlftKlH6vxo",
-  authDomain: "jajja-bank-app.firebaseapp.com",
-  projectId: "jajja-bank-app",
-  storageBucket: "jajja-bank-app.appspot.com",
-  messagingSenderId: "165227390733",
-  appId: "1:165227390733:web:ed1898ba92d34b85ac3244",
-  measurementId: "G-EHHKQ561B6"
+  apiKey: "AIzaSyDw8BITv0tjCT9G9gB0FoMeqiGYAL2Rolw",
+  authDomain: "reactbank-3f1c0.firebaseapp.com",
+  projectId: "reactbank-3f1c0",
+  storageBucket: "reactbank-3f1c0.appspot.com",
+  messagingSenderId: "974633220207",
+  appId: "1:974633220207:web:71fead66d222188559359a",
+  measurementId: "G-RMC8GZ6MBC"
 };
 
 // Initialize Firebase
