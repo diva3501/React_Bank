@@ -5,6 +5,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from '../Config/Firebase';
 import Navbar from './Header/Navbar';
 import Footer from './Footer/Footer';
+import "./KYCRegistration.css"
 
 
 function GoldLoan() {
@@ -58,7 +59,7 @@ function GoldLoan() {
   return (
     <>
     <Navbar />
-    <div className="container">
+    <div className="container1">
      
       <h2>Gold Loan</h2>
       <form className="form-container" onSubmit={handleSubmit}>

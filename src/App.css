@@ -10152,17 +10152,17 @@ textarea.form-control-lg {
   }
 }
 header.topbar {
-  background-color: #0077b6;
+  background-color: #0f67cc;
   margin-bottom: -1px;
 }
 
 .navbar {
-  background-color: #0077b6;
+  background-color: #0f67cc;
 }
 
 footer {
   margin-bottom: 0;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   text-align: center;
   background-color: #0077b6;
@@ -10297,6 +10297,9 @@ footer {
   color: white;
 }
 
+.dashboardPage {
+  background-color: #73a7e2;
+}
 .dashboardPage p.TC, .dashboardPage p.TD {
   display: inline;
   background-color: #73a7e2;

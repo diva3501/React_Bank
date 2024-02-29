@@ -1,10 +1,10 @@
-.container {
+.container1{
     max-width: 600px;
-    margin: 0 auto;
+    margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    margin-bottom: auto;
   }
   
   .form-container {
@@ -24,12 +24,15 @@
   }
   
   .btn-primary {
+    
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
+    margin: auto;
+    margin-bottom: 25px;
   }
   
   .btn-primary:hover {

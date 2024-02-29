@@ -6,7 +6,7 @@ import { firestore } from '../Config/Firebase';
 import Footer from './Footer/Footer';
 import SideBar2 from 'pages/dashboard/sideBar/SideBar2';
 import Navbar from './Header/Navbar';
-
+import "./KYCRegistration.css"
 
 function KYCRegistration() {
   const [formData, setFormData] = useState({
@@ -59,7 +59,7 @@ function KYCRegistration() {
   return (
     <>
     <Navbar />
-    <div className="container">
+    <div className="container1">
      
       <h2>KYC Registration</h2>
       <form className="form-container" onSubmit={handleSubmit}>
