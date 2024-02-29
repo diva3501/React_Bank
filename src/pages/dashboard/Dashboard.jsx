@@ -4,6 +4,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { firestore } from 'Config/Firebase';
 import { AuthenticatedContext } from 'Context/AuthenticatedContext';
 import { Rings } from "react-loader-spinner";
+import Footer from 'components/Footer/Footer';
 
 function Dashboard() {
   const { user } = useContext(AuthenticatedContext)
@@ -54,6 +55,7 @@ function Dashboard() {
   }, [])
 
   return (
+    <>
     <div className='dashboardPage'>
       <div className='container py-5'>
         <div className="row">
@@ -119,6 +121,8 @@ function Dashboard() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   )
 }
 
