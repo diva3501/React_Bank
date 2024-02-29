@@ -8,6 +8,7 @@ import ForgotPassword from './Authentication/ForgotPassword';
 import NoPage from "./NoPage"
 import PrivateRoute from './important/PrivateRoute';
 import { AuthenticatedContext } from 'Context/AuthenticatedContext';
+import KYCRegistration from 'components/KYCRegistration';
 // import { useNavigate } from 'react-router-dom';
 
 function CustomRoutes() {
@@ -26,6 +27,7 @@ function CustomRoutes() {
                 <Route path='/signUp' element={<SignUp />} />
                 <Route path='/forgotPassword' element={<ForgotPassword />} />
                 <Route path='/dashboard/*' element={<PrivateRoute Component={Dashboard} />} />
+                <Route path='/KycRegistration' element={<KYCRegistration />} />
                 <Route path='*' element={<NoPage />} />
             </Routes>
             {/* </main> */}

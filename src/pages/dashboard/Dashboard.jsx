@@ -110,7 +110,7 @@ function Dashboard() {
           <div className="col text-center">
             <h3>KYC Registration</h3>
             <p>Complete your KYC registration process to avail additional services.</p>
-            <Link to="/kyc-registration" className="btn btn-primary">Start KYC Registration</Link>
+            <Link to="/KycRegistration" className="btn btn-primary">Start KYC Registration</Link>
           </div>
         </div>
       </div>
