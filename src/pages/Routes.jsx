@@ -9,6 +9,7 @@ import NoPage from "./NoPage"
 import PrivateRoute from './important/PrivateRoute';
 import { AuthenticatedContext } from 'Context/AuthenticatedContext';
 import KYCRegistration from 'components/KYCRegistration';
+import GoldLoan from 'components/GoldLoan';
 // import { useNavigate } from 'react-router-dom';
 
 function CustomRoutes() {
@@ -28,6 +29,7 @@ function CustomRoutes() {
                 <Route path='/forgotPassword' element={<ForgotPassword />} />
                 <Route path='/dashboard/*' element={<PrivateRoute Component={Dashboard} />} />
                 <Route path='/KycRegistration' element={<KYCRegistration />} />
+                <Route path='/Goldloan' element={<GoldLoan />} />
                 <Route path='*' element={<NoPage />} />
             </Routes>
             {/* </main> */}

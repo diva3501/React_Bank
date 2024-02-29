@@ -7,7 +7,7 @@ import Navbar from './Header/Navbar';
 import Footer from './Footer/Footer';
 
 
-function KYCRegistration() {
+function GoldLoan() {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -60,38 +60,58 @@ function KYCRegistration() {
     <Navbar />
     <div className="container">
      
-      <h2>KYC Registration</h2>
+      <h2>Gold Loan</h2>
       <form className="form-container" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="fullName" className="form-label">Full Name</label>
           <input type="text" className="form-control" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} required />
         </div>
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">Email</label>
+          <label htmlFor="email" className="form-label">KN Number</label>
           <input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} required />
         </div>
         <div className="mb-3">
-          <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
+          <label htmlFor="phoneNumber" className="form-label">Gold Type– 8/16/24 Carat</label> 
           <input type="text" className="form-control" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
         </div>
         <div className="mb-3">
-          <label htmlFor="address" className="form-label">Address</label>
-          <textarea className="form-control" id="address" name="address" value={formData.address} onChange={handleChange} required></textarea>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="aadharNumber" className="form-label">Aadhar Number</label>
+          <label htmlFor="aadharNumber" className="form-label">Weight (in gms)</label>
           <input type="text" className="form-control" id="aadharNumber" name="aadharNumber" value={formData.aadharNumber} onChange={handleChange} required />
         </div>
         <div className="mb-3">
-          <label htmlFor="panNumber" className="form-label">PAN Number</label>
+          <label htmlFor="aadharNumber" className="form-label">Place Bought</label>
+          <input type="text" className="form-control" id="aadharNumber" name="aadharNumber" value={formData.aadharNumber} onChange={handleChange} required />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="panNumber" className="form-label">Jewelers Name & Address</label>
           <input type="text" className="form-control" id="panNumber" name="panNumber" value={formData.panNumber} onChange={handleChange} required />
         </div>
         <div className="mb-3">
-          <label htmlFor="passportNumber" className="form-label">Passport Number</label>
+          <label htmlFor="passportNumber" className="form-label">Photo of the Gold Ornament </label>
           <input type="text" className="form-control" id="passportNumber" name="passportNumber" value={formData.passportNumber} onChange={handleChange} />
         </div>
         <div className="mb-3">
-          <label htmlFor="drivingLicenseNumber" className="form-label">Driving License Number</label>
+          <label htmlFor="drivingLicenseNumber" className="form-label">Account holder name</label>
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="drivingLicenseNumber" className="form-label">Account Type</label>
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="drivingLicenseNumber" className="form-label">Account Number</label>
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="drivingLicenseNumber" className="form-label">IFSC Number</label>
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="drivingLicenseNumber" className="form-label">Bank Name</label>
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="drivingLicenseNumber" className="form-label">Branch Name</label>
           <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
         </div>
         <div className="submit-container">
@@ -105,4 +125,4 @@ function KYCRegistration() {
   );
 }
 
-export default KYCRegistration;
+export default GoldLoan;

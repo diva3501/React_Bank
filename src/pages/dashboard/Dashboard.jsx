@@ -117,6 +117,17 @@ function Dashboard() {
             </div>
           </div>
         </div>
+        <div className="row mt-5">
+          <div className="col-12 text-center">
+            <div className="card">
+              <div className="card-body">
+                <h3 className="card-title">Gold Loan</h3>
+                <h6 className="card-text">Complete your Gold Loan process to avail additional services.</h6>
+                <Link to="/Goldloan" className="btn btn-primary">Complete Gold Loan Process</Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
