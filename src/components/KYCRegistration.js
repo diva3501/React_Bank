@@ -6,7 +6,6 @@ import { firestore } from '../Config/Firebase';
 import Navbar from './Header/Navbar';
 import Footer from './Footer/Footer';
 
-useNavigate
 
 function KYCRegistration() {
   const [formData, setFormData] = useState({
