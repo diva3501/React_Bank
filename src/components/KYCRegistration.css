@@ -7,6 +7,10 @@
     background-color: #f9f9f9;
   }
   
+  .form-container {
+    margin-bottom: 20px;
+  }
+  
   .form-label {
     font-weight: bold;
   }
@@ -31,4 +35,9 @@
   .btn-primary:hover {
     background-color: #0056b3;
   }
+  .submit-container {
+    display: flex;
+    justify-content: center;
+  }
+  
   
