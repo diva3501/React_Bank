@@ -117,7 +117,7 @@ function GoldLoan() {
 
       </form>
     </div>
-    <Footer />
+    
     </>
   );
 }

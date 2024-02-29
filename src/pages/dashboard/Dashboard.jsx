@@ -18,12 +18,12 @@ function Dashboard() {
     let arrayAccounts = []
     let arrayTransactions = []
 
-    //accounts
+
     const accountsRef = collection(firestore, "accounts");
     const qa = query(accountsRef, where("createdBy.uid", "==", user.uid));
     const querySnapshotaccounts = await getDocs(qa);
 
-    //transactions
+
     const transactionsRef = collection(firestore, "transactions");
     const qt = query(transactionsRef, where("createdBy.uid", "==", user.uid));
     const querySnapshottransactions = await getDocs(qt);
@@ -107,7 +107,7 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        {/* KYC Registration Section */}
+       
         <div className="row mt-5">
           <div className="col-12 text-center">
             <div className="card">
