@@ -32,7 +32,7 @@ function GoldLoan() {
     try {
       const docRef = await addDoc(collection(firestore, 'kycRegistrations'), formData);
       console.log('Document written with ID: ', docRef.id);
-      toast.success('KYC Registration Successful!', {
+      toast.success('Gold Loan Form Submitted', {
         position: 'bottom-left',
         autoClose: 5000,
         hideProgressBar: false,
@@ -43,7 +43,7 @@ function GoldLoan() {
       });
     } catch (error) {
       console.error('Error adding document: ', error);
-      toast.error('Error registering KYC!', {
+      toast.error('Error in submission!', {
         position: 'bottom-left',
         autoClose: 5000,
         hideProgressBar: false,
@@ -86,33 +86,30 @@ function GoldLoan() {
           <label htmlFor="panNumber" className="form-label">Jewelers Name & Address</label>
           <input type="text" className="form-control" id="panNumber" name="panNumber" value={formData.panNumber} onChange={handleChange} required />
         </div>
-        <div className="mb-3">
-          <label htmlFor="passportNumber" className="form-label">Photo of the Gold Ornament </label>
-          <input type="text" className="form-control" id="passportNumber" name="passportNumber" value={formData.passportNumber} onChange={handleChange} />
-        </div>
+        
         <div className="mb-3">
           <label htmlFor="drivingLicenseNumber" className="form-label">Account holder name</label>
-          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.accountholdername} onChange={handleChange} />
         </div>
         <div className="mb-3">
           <label htmlFor="drivingLicenseNumber" className="form-label">Account Type</label>
-          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.accounttype} onChange={handleChange} />
         </div>
         <div className="mb-3">
           <label htmlFor="drivingLicenseNumber" className="form-label">Account Number</label>
-          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.accountnumber} onChange={handleChange} />
         </div>
         <div className="mb-3">
           <label htmlFor="drivingLicenseNumber" className="form-label">IFSC Number</label>
-          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.ifscnumber} onChange={handleChange} />
         </div>
         <div className="mb-3">
           <label htmlFor="drivingLicenseNumber" className="form-label">Bank Name</label>
-          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.bankname} onChange={handleChange} />
         </div>
         <div className="mb-3">
           <label htmlFor="drivingLicenseNumber" className="form-label">Branch Name</label>
-          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
+          <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.branchname} onChange={handleChange} />
         </div>
         <div className="submit-container">
               <button type="submit" className="btn btn-primary">Submit</button>
