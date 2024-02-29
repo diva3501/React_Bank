@@ -107,14 +107,10 @@ function Dashboard() {
         </div>
         {/* KYC Registration Section */}
         <div className="row mt-5">
-          <div className="col-12 text-center">
-            <div className="card">
-              <div className="card-body">
-                <h3 className="card-title">KYC Registration</h3>
-                <h6 className="card-text">Complete your KYC registration process to avail additional services.</h6>
-                <Link to="/kyc-registration" className="btn btn-primary">Start KYC Registration</Link>
-              </div>
-            </div>
+          <div className="col text-center">
+            <h3>KYC Registration</h3>
+            <p>Complete your KYC registration process to avail additional services.</p>
+            <Link to="/KycRegistration" className="btn btn-primary">Start KYC Registration</Link>
           </div>
         </div>
       </div>

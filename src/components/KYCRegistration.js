@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from '../Config/Firebase';
-import "./KYCRegistration.css";
+import Navbar from './Header/Navbar';
+import Footer from './Footer/Footer';
 
 useNavigate
 
@@ -56,7 +57,10 @@ function KYCRegistration() {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="container">
+     
       <h2>KYC Registration</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -94,6 +98,8 @@ function KYCRegistration() {
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>
+    <Footer />
+    </>
   );
 }
 
