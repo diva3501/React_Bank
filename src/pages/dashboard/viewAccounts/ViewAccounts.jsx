@@ -11,7 +11,7 @@ import { async } from '@firebase/util';
 
 function ViewAccounts() {
 
-  const [documents, setDocuments] = useState([])   
+  const [documents, setDocuments] = useState([])  
   const [isLoading, setIsLoading] = useState(true)
   const { user } = useContext(AuthenticatedContext)
   const [docId, setDocId] = useState("")
@@ -29,7 +29,8 @@ function ViewAccounts() {
 
     querySnapshot.forEach((doc) => {
       
-      array.push(doc.data())   
+      array.push(doc.data())  
+    });
 
     setDocuments(array)
     setIsLoading(false)

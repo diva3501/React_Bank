@@ -80,7 +80,7 @@ function GoldLoan() {
         </div>
         <div className="mb-3">
           <label htmlFor="aadharNumber" className="form-label">Place Bought</label>
-          <input type="text" className="form-control" id="aadharNumber" name="aadharNumber" value={formData.aadharNumber} onChange={handleChange} required />
+          <input type="text" className="form-control" id="aadharNumber" name="aadharNumber" value={formData.placebought} onChange={handleChange} required />
         </div>
         <div className="mb-3">
           <label htmlFor="panNumber" className="form-label">Jewelers Name & Address</label>
