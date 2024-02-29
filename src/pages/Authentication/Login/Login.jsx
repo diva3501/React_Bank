@@ -24,26 +24,21 @@ function Login() {
     setState({ ...state, [e.target.name]: e.target.value })
   }
   useEffect(() => {
-    // setUser(auth.currentUser)
+   
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        // const uid = user.uid;
-        // console.log(user)
+        
         setUser(user)
         setUserId(user.uid)
-        // console.log(user.uid)
-        // ...
+        
       } else {
-        // console.log("user is not signed in")
+        
         setUser({})
-        // User is signed out
-        // ...
+        
       }
     });
   }, [])
-  //loginUser
+  
 
   const navigate = useNavigate()
   const handleSubmit = (e) => {
@@ -72,11 +67,10 @@ function Login() {
         console.log(user)
         setIsAuthenticated(true);
         navigate("/dashboard")
-        // ...
+        
       })
       .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
+        
         console.error(error)
         toast.error("password/email incorrect", {
           position: "bottom-left",
@@ -94,18 +88,18 @@ function Login() {
   }
 
   const handleGoogleAuthentication = (e) => {
-    // const auth = getAuth(); 
+
     e.preventDefault();
     console.log("Google");
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result.user)
-        // This gives you a Google Access Token. You can use it to access the Google API.
+        
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
-        // The signed-in user info.
+
         const user = result.user;
-        // ...
+        
         toast.success("User has been logged in!", {
           position: "top-right",
           autoClose: 5000,
@@ -115,17 +109,10 @@ function Login() {
           draggable: true,
           progress: undefined,
         })
-        // setIsAuthenticated(true);
+        
         navigate("/dashboard")
       }).catch((error) => {
-        // // Handle Errors here.
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // // The email of the user's account used.
-        // const email = error.customData.email;
-        // // The AuthCredential type that was used.
-        // const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
+      
         toast.error(error, {
           position: "top-right",
           autoClose: 5000,
@@ -139,20 +126,20 @@ function Login() {
   }
 
   const handleFacebookAuthentication = () => {
-    // alert("working")
+    
 
     signInWithPopup(auth, facebookProvider)
       .then((result) => {
-        // The signed-in user info.
+        
         const user = result.user;
         console.log(user)
-        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        
         const credential = FacebookAuthProvider.credentialFromResult(result);
         const accessToken = credential.accessToken;
         console.log(accessToken)
-        // setIsAuthenticated(true);
+        
         navigate("/dashboard")
-        // ...
+        
         toast.success("User has been logged in!", {
           position: "top-right",
           autoClose: 5000,
@@ -165,15 +152,7 @@ function Login() {
 
       })
       .catch((error) => {
-        // // Handle Errors here.
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // // The email of the user's account used.
-        // const email = error.customData.email;
-        // // The AuthCredential type that was used.
-        // const credential = FacebookAuthProvider.credentialFromError(error);
-
-        // ...
+        
         console.error(error)
         toast.error(error.message, {
           position: "top-right",
@@ -191,13 +170,6 @@ function Login() {
   const handleGithubAuthentication = () => {
     signInWithPopup(auth, githubProvider)
       .then((result) => {
-        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
-        // const credential = GithubAuthProvider.credentialFromResult(result);
-        // const token = credential.accessToken;
-
-        // The signed-in user info.
-        // const user = result.user;
-        // ...
         console.log(result)
         toast.success("User has been logged in!", {
           position: "top-right",
@@ -208,17 +180,10 @@ function Login() {
           draggable: true,
           progress: undefined,
         })
-        // setIsAuthenticated(true);
+       
         navigate("/dashboard")
       }).catch((error) => {
-        // // Handle Errors here.
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // // The email of the user's account used.
-        // const email = error.customData.email;
-        // // The AuthCredential type that was used.
-        // const credential = GithubAuthProvider.credentialFromError(error);
-        // ...
+     
         console.error(error)
         toast.error(error.message, {
           position: "top-right",
@@ -274,7 +239,6 @@ function Login() {
                   <div className="text-end">
                     <Link to="/forgotPassword">forgot Passsword?</Link>
                   </div>
-                  {/* <button type="submit" className="btn btn-danger text-center">Login</button> */}
                 </form>
                 <div style={{ position: "relative" }}><span className='OR text-center'><i class="fa-solid fa-o"></i><i class="fa-solid fa-r"></i></span><hr /></div>
                 <div className="text-center">
