@@ -1,0 +1,48 @@
+/* GoldLoan.css */
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .goldloan-form {
+    margin-top: 20px;
+  }
+  
+  .goldloan-form .form-label {
+    font-weight: bold;
+  }
+  
+  .goldloan-form .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .goldloan-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .goldloan-form button.btn-success {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .goldloan-form button.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .goldloan-form button:hover {
+    opacity: 0.8;
+  }
+  
