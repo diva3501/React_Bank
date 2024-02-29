@@ -11,7 +11,7 @@ import { async } from '@firebase/util';
 
 function ViewAccounts() {
 
-  const [documents, setDocuments] = useState([])   //key line for understanding these basic Hooks
+  const [documents, setDocuments] = useState([])  
   const [isLoading, setIsLoading] = useState(true)
   const { user } = useContext(AuthenticatedContext)
   const [docId, setDocId] = useState("")
@@ -25,19 +25,19 @@ function ViewAccounts() {
 
     const accountsRef = collection(firestore, "accounts");
     const q = query(accountsRef, where("createdBy.uid", "==", user.uid));
-    const querySnapshot = await getDocs(q);  // Note: Key line for Reading data
+    const querySnapshot = await getDocs(q); 
 
     querySnapshot.forEach((doc) => {
-      // console.log(doc.data().userId)
-      array.push(doc.data())   //Also must Note this line
+      
+      array.push(doc.data())  
     });
 
     setDocuments(array)
     setIsLoading(false)
-    // console.log(documents)
+  
   }
 
-  useEffect(() => {     //Note this point carefully also
+  useEffect(() => {     
     readDocs()
   }, [])
 
@@ -47,8 +47,7 @@ function ViewAccounts() {
   }
 
   const handleDelete = async () => {
-    // console.log("Deleting file", docId);
-    // setIsLoading(true);
+   
     await deleteDoc(doc(firestore, "accounts", docId));
     toast.success("Account Deleted Successfuly!", {
       position: "top-right",
@@ -63,33 +62,29 @@ function ViewAccounts() {
       return docId !== object.id;
     })
     setDocuments(newDocuments)
-    // setIsLoading(false);
+   
   }
 
   const handleDepositChange = e => {
-    setIsDepositAmount({ ...isDepositAmount, [e.target.name]: e.target.value })   //what does this line   Confusion!  
-    // console.log(isDepositAmount)
+    setIsDepositAmount({ ...isDepositAmount, [e.target.name]: e.target.value })  
   }
 
   const handleWithdrawChange = e => {
-    setIsWithdrawAmount({ ...isWithdrawAmount, [e.target.name]: e.target.value })   //what does this line   Confusion!  
-    // console.log(isWithdrawAmount)
+    setIsWithdrawAmount({ ...isWithdrawAmount, [e.target.name]: e.target.value })   
   }
 
 
   const handleDeposit = async () => {
 
-    let newDocument = documents.find((object) => {   // will store selected object using find method
+    let newDocument = documents.find((object) => {   
       return docId == object.id;
     })
 
-    const { depositAmount } = isDepositAmount //destructuring used here
+    const { depositAmount } = isDepositAmount 
     const { initialDeposit } = newDocument
 
-    // console.log(withdrawAmount)
     if (parseInt(depositAmount) < 0) {
-      // console.log(running)
-      // alert("running")
+
       toast.error('Amount is not in correct format!', {
         position: "top-right",
         autoClose: 5000,
@@ -105,8 +100,6 @@ function ViewAccounts() {
     newDocument.initialDeposit = (parseInt(initialDeposit) + parseInt(depositAmount)).toString();
     newDocument.description = isDepositAmount.description;
 
-    // transaction code
-
     let transactionData = {
       amount: depositAmount,
       description: newDocument.description,
@@ -120,12 +113,9 @@ function ViewAccounts() {
         uid: user.uid
       }
     }
-    // if(initialDeposit <= newDocument.initialDeposit){
-    //   transactionData.type = 'debit';
-    // }
+
     try {
-      await setDoc(doc(firestore, "transactions", transactionData.id), transactionData)
-      // console.log("Transaction done", transactionData)   
+      await setDoc(doc(firestore, "transactions", transactionData.id), transactionData) 
     } catch (err) {
       console.error(err)
     }
@@ -136,7 +126,6 @@ function ViewAccounts() {
     let updatedArray = documents.filter(object => {
 
       if (docId === object.id) {
-        // console.log(docId)
         return newDocument
       }
       return object
@@ -144,8 +133,7 @@ function ViewAccounts() {
     setDocuments(updatedArray)
 
 
-    // console.log(depositAmount)
-    // const docRef = doc(firestore, "accounts", docId);
+
     await setDoc(doc(firestore, "accounts", docId), newDocument);
     toast.success("Amount Deposited Successfuly!", {
       position: "top-right",
@@ -163,20 +151,19 @@ function ViewAccounts() {
 
 
     
-    let newDocument = documents.find((object) => {   // will store selected object using find method
+    let newDocument = documents.find((object) => {   
       return docId == object.id;
     })
     
-    // console.log(parseInt(isWithdrawAmount.withdrawAmount))
+ 
 
 
 
-    const { withdrawAmount } = isWithdrawAmount //destructuring used here
+    const { withdrawAmount } = isWithdrawAmount 
     const { initialDeposit } = newDocument
-    // console.log(withdrawAmount)
+
     if (parseInt(withdrawAmount) < 0) {
-      // console.log(running)
-      // alert("running")
+ 
       toast.error('Amount is not in correct format!', {
         position: "top-right",
         autoClose: 5000,
@@ -190,8 +177,6 @@ function ViewAccounts() {
     }
     
 
-    // console.log(newDocument.initialDeposit)
-    // console.log(withdrawAmount)
     if (parseInt(withdrawAmount) > parseInt(newDocument.initialDeposit)) {
       toast.error("Your account has insufficient balance", {
         position: "top-right",
@@ -208,8 +193,6 @@ function ViewAccounts() {
     newDocument.initialDeposit = (parseInt(initialDeposit) - parseInt(withdrawAmount)).toString();
     newDocument.description = isWithdrawAmount.description;
 
-    // transaction code
-
     let transactionData = {
       amount: withdrawAmount,
       description: newDocument.description,
@@ -223,9 +206,7 @@ function ViewAccounts() {
         uid: user.uid
       }
     }
-    // if(initialDeposit <= newDocument.initialDeposit){
-    //   transactionData.type = 'debit';
-    // }
+   
     try {
       await setDoc(doc(firestore, "transactions", transactionData.id), transactionData)
       console.log("Transaction done", transactionData)
@@ -248,7 +229,6 @@ function ViewAccounts() {
 
 
     console.log(withdrawAmount)
-    // const docRef = doc(firestore, "accounts", docId);
     await setDoc(doc(firestore, "accounts", docId), newDocument);
     toast.success("Amount Withdrawn Successfuly!", {
       position: "top-right",
@@ -269,11 +249,9 @@ function ViewAccounts() {
           <div className="col">
             <div className="card my-5 md-5">
               <div className="card-body " style={{ overflow: "auto" }}>
-                {/* <div className="container"> */}
-                <div className="row ">
+               <div className="row ">
                   <div className="col text-start"><Link to="/dashboard" style={{ textDecoration: "none" }} className='btn-sm btn-danger text-white'><i className="fa-solid fa-arrow-left"></i> Dashboard</Link ></div>
-                  {/* <div className="col text-end"><Link to="/dashboard/createAccounts" style={{ textDecoration: "none" }} className='btn-sm btn-success'><i className="fa-solid fa-plus"></i> Account</Link ></div> */}
-                </div>
+                  </div>
                 <br />
                 <div className="row">
                   <div className="col text-center"><h5><i className="fa-solid fa-user me-1"></i>Accounts</h5></div>
@@ -311,30 +289,27 @@ function ViewAccounts() {
                               documents.map((doc, i) => {
                                 return <Tr key={i}>
                                   <Td>{doc.branchCode}</Td>
-                                  {/* <!-- Button trigger modal --> */}
-                                  {/* <Td  className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                      {doc.accountNumber}
-                                    </Td> */}
+                                 
                                   <Td>
                                     <div onClick={() => handleClick(doc)} className="btn btn-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style={{ textDecoration: "none" }}>
                                       {doc.accountNumber}
                                     </div>
                                   </Td>
 
-                                  {/* Hello world */}
+                                
 
                                   <Td>{doc.fullName}</Td>
                                   <Td>{doc.date}</Td>
                                   <Td>{doc.accountType}</Td>
                                   <Td>{doc.initialDeposit}</Td>
-                                  {/* <!-- Modal --> */}
+                             
 
                                 </Tr>
                               })
                             }
                           </Tbody>
                         </Table>
-                        {/* Account Detail Model */}
+                     
                         <div className="modal fade mt-3 " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                           <div className="modal-dialog modal-dialog-scrollable">
                             <div className="modal-content">
@@ -352,8 +327,7 @@ function ViewAccounts() {
                                       <button type="button" class="btn-sm btn-danger text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
                                         <i className="fa-solid fa-trash"></i> Delete Account
                                       </button>
-                                      {/* <button className="btn-sm btn-danger text-white" ><i className="fa-solid fa-trash"></i> Delete Account</button> */}
-                                    </div>
+                                             </div>
                                   </div>
                                   <div className="row mt-3">
                                     <div className="col">
@@ -411,8 +385,6 @@ function ViewAccounts() {
                                       <button className='btn-sm btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal3">
                                         <i class="fa-solid fa-angles-down"></i> Withdraw
                                       </button>
-                                      {/* <button className='btn-sm btn-success me-2'><i class="fa-solid fa-credit-card"></i> Deposit</button> */}
-                                      {/* <button className='btn-sm btn-primary'><i class="fa-solid fa-angles-down"></i> Withdraw</button> */}
                                     </div>
                                   </div>
                                 </div>
@@ -420,7 +392,7 @@ function ViewAccounts() {
                             </div>
                           </div>
                         </div>
-                        {/* Deposit Model */}
+                 
                         <div class="modal fade" id="exampleModal2" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog">
                             <div class="modal-content">
@@ -463,7 +435,7 @@ function ViewAccounts() {
                             </div>
                           </div>
                         </div>
-                        {/* Withdraw Model */}
+                    
                         <div class="modal fade" id="exampleModal3" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog">
                             <div class="modal-content">
@@ -504,13 +476,11 @@ function ViewAccounts() {
                             </div>
                           </div>
                         </div>
-                        {/* Delete Confirmation Model */}
+                    
                         <div class="modal fade p-0" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                           <div class="modal-dialog modal-dialog-centered" style={{ width: "360px", height: "300px" }}>
                             <div class="modal-content">
-                              {/* <div class="modal-header"> */}
-
-                              {/* </div> */}
+                              
                               <div class="modal-body">
                                 <div className="container my-4">
                                   <div className="row">

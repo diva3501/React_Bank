@@ -4,8 +4,7 @@ import ViewTransactions from './viewTransactions';
 import ViewAccounts from './viewAccounts';
 import CreateAccounts from "./accounts"
 import { Routes, Route } from 'react-router-dom'
-// import Sidebar from './sideBar/Sidebar';
-// import SideBar2 from './sideBar/index';
+
 import { Link } from "react-router-dom"
 function index() {
   return (

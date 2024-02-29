@@ -3,10 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from '../Config/Firebase';
-import Footer from './Footer/Footer';
-import SideBar2 from 'pages/dashboard/sideBar/SideBar2';
 import Navbar from './Header/Navbar';
 import "./KYCRegistration.css"
+import Footer from './Footer/Footer';
 
 function KYCRegistration() {
   const [formData, setFormData] = useState({
@@ -95,6 +94,7 @@ function KYCRegistration() {
           <label htmlFor="drivingLicenseNumber" className="form-label">Driving License Number</label>
           <input type="text" className="form-control" id="drivingLicenseNumber" name="drivingLicenseNumber" value={formData.drivingLicenseNumber} onChange={handleChange} />
         </div>
+       
         <div className="submit-container">
               <button type="submit" className="btn btn-primary">Submit</button>
         </div>
@@ -102,6 +102,7 @@ function KYCRegistration() {
       </form>
     </div>
     <Footer />
+   
     </>
   );
 }
