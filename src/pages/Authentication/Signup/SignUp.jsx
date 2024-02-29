@@ -44,8 +44,7 @@ function SignUp() {
             draggable: true,
             progress: undefined,
           });
-          // console.log(userCredential)
-          // console.log(user)
+          
           setIsAuthenticated(true)
           Navigate("/dashboard/viewAccounts")
           // ...

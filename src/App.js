@@ -12,9 +12,6 @@ function App() {
 
   const { isAuthenticated, isLoader } = useContext(AuthenticatedContext)
 
-  // console.log(isAuthenticated)
-  // console.log(isLoader)
-
   return (
     <>
       {isLoader
