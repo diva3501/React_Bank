@@ -1,6 +1,7 @@
 .container1{
     max-width: 600px;
     margin: auto;
+    margin-top: 45px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;

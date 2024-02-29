@@ -97,8 +97,8 @@ function Dashboard() {
                       {totalTransactions}
                       <div className="container-fluid">
                         <div className="row ">
-                          <div className="col text-start mb-0"><p className='TC' style={{ fontSize: '17px' }}>Total Credits Rs:<span className='text-success'>{totalCredit}</span></p></div>
-                          <div className="col text-end mb-0"><p className='TD' style={{ fontSize: '17px' }}>Total Debits Rs:<span className='text-danger'>{totalDebit}</span></p></div>
+                          <div className="col text-start mb-0" ><p className='TC' style={{ fontSize: '17px',color:'white',backgroundColor:'#404040'}}>Total Credits Rs: <span className='text-success' style={{color:'#33ff33'}}> { totalCredit}</span></p></div>
+                          <div className="col text-end mb-0"><p className='TD' style={{ fontSize: '17px' ,color:'white',backgroundColor:'#404040'}}>Total Debits Rs: <span className='text-danger'> { totalDebit}</span></p></div>
                         </div>
                       </div>
                     </div>

@@ -6,6 +6,7 @@ import CreateAccounts from "./accounts"
 import { Routes, Route } from 'react-router-dom'
 
 import { Link } from "react-router-dom"
+import Footer from 'components/Footer/Footer';
 function index() {
   return (
     <>
@@ -45,6 +46,7 @@ function index() {
           </Route>
         </Routes>
       </div>
+      <Footer />
     </>
 
   )
