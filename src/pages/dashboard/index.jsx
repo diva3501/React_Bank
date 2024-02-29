@@ -14,7 +14,7 @@ function index() {
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <div class="container-fluid">
             <Link to="/" class="navbar-brand" ><i class="fa-solid fa-house"></i></Link>
-            {/* <h1  class="navbar-brand mb-0 text-center" >JAJJA-BANK-APP</h1> */}
+             <h1  class="navbar-brand mb-0 text-center" >Virtusa-BANK-APP</h1> 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,20 +33,9 @@ function index() {
             </div>
           </div>
         </nav>
-        {/* <div className="container">
-          <div className="row">
-            <div className="col">
-            <Link to="/" style={{textDecoration:"none"}} className="mb-0 h3 text-white">Bank App</Link>
-              <div>
-              <Link to="/dashboard" style={{textDecoration:"none"}} className="mb-0 h6 text-white">Dashboard</Link>
-              <Link to="/dashboard/viewAccounts" style={{textDecoration:"none"}} className="mb-0 h6 text-white">Accounts</Link>
-              <Link to="/dashboard/viewTransactions" style={{textDecoration:"none"}} className="mb-0 h6 text-white">Dashboard</Link>
-              </div>
-            </div>
-          </div>
-        </div> */}
+      
       </header>
-      {/* <SideBar2 /> */}
+     
 
       <div className='contentArea' >
         <Routes>

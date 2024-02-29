@@ -20,6 +20,7 @@ import { IoMdPeople } from 'react-icons/io'
 import "react-pro-sidebar/dist/css/styles.css";
 import { Link } from "react-router-dom";
 
+
 function SideBar2({ rtl }) {
     const [menuCollapse, setMenuCollapse] = useState(false);
     const [handleToggleSidebar,setHandleTogglerSideBar] = useState(false)

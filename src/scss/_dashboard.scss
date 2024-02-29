@@ -1,7 +1,8 @@
 .dashboardPage {
+    background-color: #73a7e2;
     p.TC,p.TD{
     display: inline;
-    background-color: #ccc;
+    background-color: #73a7e2;
     padding: 0 7px;
     border-radius: 10px;
     font-size: 10px;
@@ -9,7 +10,7 @@
     @media screen and (min-width: 480px) {
         p{
             display: inline;
-            background-color: #ccc;
+            background-color: #73a7e2;
             padding: 0 7px;
             border-radius: 10px;
             font-size: 7px;
