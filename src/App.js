@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import { AuthenticatedContext } from "Context/AuthenticatedContext";
 import ScreenLoader from "components/ScreenLoader"
 
+
 function App() {
 
   const { isAuthenticated, isLoader } = useContext(AuthenticatedContext)

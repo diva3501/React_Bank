@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from '../Config/Firebase';
+import "./KYCRegistration.css";
 
+useNavigate
 
 function KYCRegistration() {
   const [formData, setFormData] = useState({

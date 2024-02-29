@@ -8,6 +8,7 @@ import ForgotPassword from './Authentication/ForgotPassword';
 import NoPage from "./NoPage"
 import PrivateRoute from './important/PrivateRoute';
 import { AuthenticatedContext } from 'Context/AuthenticatedContext';
+
 // import { useNavigate } from 'react-router-dom';
 
 function CustomRoutes() {
