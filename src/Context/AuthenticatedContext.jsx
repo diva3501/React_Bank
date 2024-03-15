@@ -4,7 +4,7 @@ import { auth } from 'Config/Firebase';
 export const AuthenticatedContext = createContext();
 
 function AuthenticatedContextProvider(props) {
-
+    
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoader, setIsLoader] = useState(true)
   const [userId, setUserId] = useState('')

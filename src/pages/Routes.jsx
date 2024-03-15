@@ -10,6 +10,7 @@ import PrivateRoute from './important/PrivateRoute';
 import { AuthenticatedContext } from 'Context/AuthenticatedContext';
 import KYCRegistration from 'components/KYCRegistration';
 import GoldLoan from 'components/GoldLoan';
+import Form from 'components/Form';
 // import { useNavigate } from 'react-router-dom';
 
 function CustomRoutes() {
@@ -31,6 +32,8 @@ function CustomRoutes() {
                 <Route path='/KycRegistration' element={<KYCRegistration />} />
                 <Route path='/Goldloan' element={<GoldLoan />} />
                 <Route path='*' element={<NoPage />} />
+                <Route path="/form" component={Form} />
+
             </Routes>
             {/* </main> */}
             {/* <Footer /> */}

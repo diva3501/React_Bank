@@ -8,6 +8,8 @@ import "./KYCRegistration.css"
 import Footer from './Footer/Footer';
 
 function KYCRegistration() {
+  const navigate = useNavigate(); // Hook for navigation
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -41,6 +43,9 @@ function KYCRegistration() {
         draggable: true,
         progress: undefined
       });
+
+      // Navigate to the second form and pass the form data as props
+      navigate('/form', { state: { formData } });
     } catch (error) {
       console.error('Error adding document: ', error);
       toast.error('Error registering KYC!', {
@@ -96,8 +101,8 @@ function KYCRegistration() {
         </div>
        
         <div className="submit-container">
-              <button type="submit" className="btn btn-primary">Submit</button>
-        </div>
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </div>
 
       </form>
     </div>
