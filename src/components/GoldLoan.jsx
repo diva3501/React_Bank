@@ -22,6 +22,8 @@ function GoldLoan() {
     branchName: '',
   });
 
+  const [showStatusPopup, setShowStatusPopup] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -58,13 +60,37 @@ function GoldLoan() {
     }
   };
 
-  const showAcceptRejectButton = () => {
+  const handleStatusClick = () => {
+    setShowStatusPopup(true);
+    setTimeout(() => {
+      setShowStatusPopup(false);
+    }, 5000); 
+  };
+
+  const handleAcceptReject = () => {
     const weight = parseFloat(formData.weight); 
     if (!isNaN(weight) && weight > 5) {
-      return <button type="button" className="btn btn-success">Accept</button>;
+      toast.success('Gold Loan Accepted', {
+        position: 'bottom-left',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
     } else {
-      return <button type="button" className="btn btn-danger">Reject</button>;
+      toast.error('Gold Loan Rejected', {
+        position: 'bottom-left',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
     }
+    setShowStatusPopup(false);
   };
 
   return (
@@ -73,7 +99,7 @@ function GoldLoan() {
       <div className="container1">
         <h2>Gold Loan</h2>
         <form className="form-container" onSubmit={handleSubmit}>
-          <div className="mb-3">
+        <div className="mb-3">
             <label htmlFor="fullName" className="form-label">Full Name</label>
             <input type="text" className="form-control" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} required />
           </div>
@@ -121,11 +147,21 @@ function GoldLoan() {
             <label htmlFor="branchName" className="form-label">Branch Name</label>
             <input type="text" className="form-control" id="branchName" name="branchName" value={formData.branchName} onChange={handleChange} />
           </div>
-          <div className="submit-container">
-            <button type="submit" className="btn btn-primary">Submit</button>
-            {showAcceptRejectButton()}
-          </div>
         </form>
+        <div className="submit-container">
+          <button type="button" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+          <button type="button" className="btn btn-primary" onClick={handleStatusClick}>Status</button>
+        </div>
+        {showStatusPopup && (
+          <div className="status-popup">
+            <p>Hello {formData.fullName}, you have provided {formData.weight} weight of gold</p>
+            {parseFloat(formData.weight) > 5 ? (
+              <button type="button" className="btn btn-success" onClick={handleAcceptReject}>Accept</button>
+            ) : (
+              <button type="button" className="btn btn-danger" onClick={handleAcceptReject}>Reject</button>
+            )}
+          </div>
+        )}
       </div>
       <Footer />
     </>
